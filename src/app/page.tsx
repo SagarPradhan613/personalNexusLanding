@@ -1,12 +1,73 @@
+"use client"
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Web3AuthNoModal } from "@web3auth/no-modal";
+// import { Web3Auth } from "@web3auth/modal";
+
+import {  CHAIN_NAMESPACES , WEB3AUTH_NETWORK } from "@web3auth/base";
 
 export default function Home() {
+// const [web3auth,setWeb3auth] = useState()
+const [web3auth, setWeb3auth] = useState<Web3AuthNoModal | null>(null);
+// const web3authProvider
+  const clientId = "BHx-dozO_3pffUEjnEcD_5f3nQRYzD3EiBftD1hbWQn8GphnFo6HYUFObwb4Xm7jXhW9zWfTJnthECMWwiz7yss"
+  useEffect(() => {
+      // setWeb3auth(1)
+      // console.log(web3auth);
+      
+    const init = async () => {
+      try {
+        const web3auth = new Web3AuthNoModal({
+          clientId,
+          chainConfig: {
+            chainNamespace: CHAIN_NAMESPACES.EIP155,
+            chainId: "0x13881",
+            rpcTarget: "https://rpc-mumbai.maticvigil.com",
+          },
+        });
+        // console.log(web3auth);
+
+        setWeb3auth(web3auth);
+        await web3auth.init();
+
+      //   let connectedStatus = await isConnected();
+      //   if (connectedStatus) {
+          // setProvider(web3auth.provider);
+          // getUserInfo();
+          // getAccounts();
+      //   }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    init();
+  }, []);
+
+
+   const isConnected = async () => {
+        if (!web3auth) {
+          console.log("web3auth not initialized yet");
+          return false;
+        }
+        return web3auth.status === "connected";
+      };
+
+  const login = async () => {
+    const _isConnected = await isConnected() ; 
+    if(_isConnected){
+      alert("Already loggedin");
+      return;
+    }
+    const web3authProvider = await web3auth.connect();
+    console.log(web3authProvider);
+    
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+        <p onClick={() => login()} className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">Login
         </p>
         <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
           <a
