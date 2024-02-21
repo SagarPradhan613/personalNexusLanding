@@ -44,14 +44,9 @@ const PinnedSectionMini4 = 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/Ne
 const SwitchBoard = 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/switch-board.png';
 const NexusIcon = 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/nexus-icon.png';
 
-import PartnerMain from '../../assets/images/check.svg'
-import LastMain from '../../assets/images/footer-small-main.png'
-import LastLeft from '../../assets/images/footer-small-left.png'
-import PartnertMain from '../../assets/images/partner-main.svg'
-import ContactMain from '../../assets/images/contact-main.png'
-import HeroSecondImage from '../../assets/images/hero-second.png'
-import HeroMainImage from '../../assets/images/hero-main-png.png'
-import HeroMainGif from '../../assets/images/animations/hero-main-gif.gif'
+
+
+
 
 
 
@@ -74,7 +69,6 @@ export const IMAGE_COLLECTIONS = {
     partner3,
     partner4,
     partner5,
-    PartnerMain,
     BackgroundCircle,
     FloatingCoin1,
     FloatingCoin2,
@@ -103,11 +97,4 @@ export const IMAGE_COLLECTIONS = {
     PinnedSectionMini4,
     SwitchBoard,
     NexusIcon,
-    LastLeft,
-    LastMain,
-    PartnertMain,
-    ContactMain,
-    HeroMainImage,
-    HeroSecondImage,
-    HeroMainGif
 }

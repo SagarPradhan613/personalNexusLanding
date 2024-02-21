@@ -112,10 +112,10 @@ const Hero = ({ scrollToTarget, targetRef }: ButtonProps) => {
                 !isMobile && (
                   <>
                     <Box left='0rem' top="0rem" position="absolute" sx={{ opacity: loading ? '0' : '0.8' }} >
-                      <Image src={IMAGE_COLLECTIONS.HeroMainGif} width="85%" />
+                      <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/hero-main-gif.gif'} width="85%" />
                     </Box>
                     <Box left='0rem' top="0rem" position="absolute" sx={{ opacity: loading ? '0.8' : '0' }} >
-                      <Image src={IMAGE_COLLECTIONS.HeroMainImage} width="85%" />
+                      <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/hero-main-png.png'} width="85%" />
                     </Box>
                   </>
 
@@ -133,7 +133,7 @@ const Hero = ({ scrollToTarget, targetRef }: ButtonProps) => {
               <Box position={"relative"}>
                 <Box width="250px" position="relative">
                   <Image src={IMAGE_COLLECTIONS.landingsecondary1} width="100%" style={{ position: 'absolute', top: '-300px', opacity: loading ? '0' : '1' }} />
-                  <Image src={IMAGE_COLLECTIONS.HeroSecondImage} width="100%" style={{ position: 'absolute', top: '-300px', opacity: loading ? '1' : '0' }} />
+                  <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/hero-second.png'} width="100%" style={{ position: 'absolute', top: '-300px', opacity: loading ? '1' : '0' }} />
                 </Box>
 
 

@@ -39,7 +39,7 @@ const PartnerSection = () => {
                         <Grid item lg={6} sm={6} xs={12}>
                             <Box m={{ xs: '0rem', sm: '4rem' }} className="move-up-down">
                                 <Flex>
-                                    <Image src={IMAGE_COLLECTIONS.PartnertMain} width={isMobile ? '250px' : '350px'} />
+                                    <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/partner-main.svg'} width={isMobile ? '250px' : '350px'} />
                                 </Flex>
                             </Box>
                         </Grid>

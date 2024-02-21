@@ -25,10 +25,10 @@ const LastSection = () => {
             </Flex>
             </Box>
             <Box position="absolute" top={{ sm: "43%", xs: "40px" }} left="43%" width={{ sm: "200px", xs: "100px" }} className="move-up-down">
-              <Image src={IMAGE_COLLECTIONS.LastMain} width="100%" />
+              <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/footer-small-main.png'} width="100%" />
             </Box>
             <Box position="absolute" top="20%" left="-10px" width="300px" className="move-up-down">
-              <Image src={IMAGE_COLLECTIONS.LastLeft} width="100%" />
+              <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/footer-small-left.png'} width="100%" />
             </Box>
             <Box position="absolute" top="25%" left="30%" width="100px" className="move-up-down">
               <Image src={IMAGE_COLLECTIONS.FloatingBook} width="100%" />
