@@ -37,10 +37,8 @@ const Main = () => {
   return (
     <>
       {loading ? (
-        // Render loading animation while images are loading
         <div></div>
       ) : (
-        // Render content once images have loaded
         <>
           <Hero scrollToTarget={scrollToTarget} targetRef={targetRefSign} />
           <LandingSecondary />
