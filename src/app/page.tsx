@@ -1,14 +1,14 @@
 "use client"
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Web3AuthNoModal } from "@web3auth/no-modal";
-// import { Web3Auth } from "@web3auth/modal";
+// import { Web3AuthNoModal } from "@web3auth/no-modal";
+import { Web3Auth } from "@web3auth/modal";
 
 import {  CHAIN_NAMESPACES , WEB3AUTH_NETWORK } from "@web3auth/base";
 
 export default function Home() {
 // const [web3auth,setWeb3auth] = useState()
-const [web3auth, setWeb3auth] = useState<Web3AuthNoModal | null>(null);
+const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
 // const web3authProvider
   const clientId = "BHx-dozO_3pffUEjnEcD_5f3nQRYzD3EiBftD1hbWQn8GphnFo6HYUFObwb4Xm7jXhW9zWfTJnthECMWwiz7yss"
   useEffect(() => {
@@ -17,7 +17,7 @@ const [web3auth, setWeb3auth] = useState<Web3AuthNoModal | null>(null);
       
     const init = async () => {
       try {
-        const web3auth = new Web3AuthNoModal({
+        const web3auth = new Web3Auth({
           clientId,
           chainConfig: {
             chainNamespace: CHAIN_NAMESPACES.EIP155,
@@ -27,22 +27,27 @@ const [web3auth, setWeb3auth] = useState<Web3AuthNoModal | null>(null);
         });
         // console.log(web3auth);
 
+        await web3auth.initModal();
         setWeb3auth(web3auth);
-        await web3auth.init();
 
-      //   let connectedStatus = await isConnected();
-      //   if (connectedStatus) {
+        // let connectedStatus = await isConnected();
+        // if (connectedStatus) {
           // setProvider(web3auth.provider);
           // getUserInfo();
           // getAccounts();
-      //   }
+        // }
+        // else{
+        // }
       } catch (error) {
         console.error(error);
       }
     };
 
     init();
+
+    
   }, []);
+ 
 
 
    const isConnected = async () => {
