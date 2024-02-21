@@ -9,13 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.10",
+    "@mui/material": "^5.15.10",
+    "@mui/styled-engine-sc": "6.0.0-alpha.16",
     "@web3auth/base": "^7.3.2",
     "@web3auth/modal": "^7.3.2",
     "@web3auth/no-modal": "^7.3.2",
+    "gsap": "^3.12.5",
     "next": "14.1.0",
     "pino-pretty": "^10.3.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sass": "^1.71.1",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@types/node": "^20",

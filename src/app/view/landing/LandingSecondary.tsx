@@ -1,0 +1,41 @@
+import { Box, Container } from "@mui/material"
+import LeftShadow from "@/app/components/page-components/LeftShadow"
+import SecondayCard from "@/app/components/page-components/cards/SecondayCard"
+import Flex from "@/app/components/utility-components/flex/Flex"
+import Heading from "@/app/components/utility-components/text/Heading"
+import Text from "@/app/components/utility-components/text/Text"
+import useIntersectionAnimation from "@/app/hooks/useIntersectionAnimation"
+import useIsMobile from "@/app/hooks/useIsMobile"
+import { DEFAULT_COLORS } from "@/app/utils/colors"
+import { IMAGE_COLLECTIONS } from "@/app/utils/images"
+
+
+const LandingSecondary = () => {
+    const boxRef = useIntersectionAnimation();
+    const isMobile = useIsMobile()
+    return (
+        < >
+            <Box position="absolute" left="0px" top="400px">
+                <LeftShadow />
+            </Box>
+            <Container maxWidth="lg" sx={{ height: isMobile ? '100vh' : '70vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Box my={'4rem'} ref={boxRef}>
+                    <Flex flexDirection="column" gap="3rem">
+                        <Flex flexDirection={{ sm: 'row', xs: 'column' }} gap={{ sm: '1rem', xs: '0rem' }}>
+                            <Heading color={DEFAULT_COLORS.White} lineHeight={isMobile ? '35px' : '55px'}>What Makes us </Heading>
+                            <Heading color={DEFAULT_COLORS.Blue} lineHeight={isMobile ? '35px' : '55px'}>Better</Heading>
+                        </Flex>
+                        <Text color={DEFAULT_COLORS.Light} maxWidth="300px" textAlign="center" lineHeight="25px" fontSize="17px">With a seamless and secure platform, Nexus is redefining the excellence of launches.</Text>
+                        <Flex style={{ width: '100%' }} flexDirection={{ sm: 'row', xs: 'column' }}>
+                            <SecondayCard image={IMAGE_COLLECTIONS.NexusN} description="Community backed launches infused into an innovative platform." />
+                            <SecondayCard image={IMAGE_COLLECTIONS.Hammer} description="Premium experience on all devices with user-friendly interface." />
+                            <SecondayCard image={IMAGE_COLLECTIONS.Settings} description="Perfectly crafted tools for all new launchpad experience." />
+                        </Flex>
+                    </Flex>
+                </Box>
+            </Container>
+        </>
+    )
+}
+
+export default LandingSecondary;

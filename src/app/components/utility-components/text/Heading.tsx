@@ -1,0 +1,43 @@
+import { Typography, TypographyProps } from "@mui/material";
+import { ComponentProps } from "../../../utils/types";
+import { DEFAULT_COLORS } from "../../../utils/colors";
+import useIsBig from "@/app/hooks/useIsBig";
+
+const Heading = ({
+    fontSize = "60px",
+    color,
+    fontFamily = "SEN bold",
+    lineHeight = "70px",
+    isGradient,
+    textAlign = "left",
+    children,
+    lineBrake
+}: ComponentProps) => {
+    const isBig = useIsBig();
+
+    // Define font sizes for different breakpoints
+    const fontSizes = {
+        xs: '35px',
+        sm: isBig ? fontSize : '80px',
+    };
+
+    return (
+        <Typography
+            fontSize={fontSizes}
+            fontFamily={fontFamily}
+            fontWeight={800}
+            lineHeight={lineHeight}
+            textAlign={textAlign as TypographyProps['textAlign']}
+            whiteSpace={lineBrake ? 'nowrap' : 'normal'}
+            sx={{
+                background: isGradient ? `-webkit-linear-gradient(${DEFAULT_COLORS.Text_Gradient})` : color,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+            }}
+        >
+            {children}
+        </Typography>
+    );
+};
+
+export default Heading;
