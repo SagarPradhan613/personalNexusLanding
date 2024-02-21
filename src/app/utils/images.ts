@@ -43,14 +43,15 @@ const PinnedSectionMini3 = 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/Ne
 const PinnedSectionMini4 = 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/pinned-section-card-mini4.png';
 const SwitchBoard = 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/switch-board.png';
 const NexusIcon = 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/nexus-icon.png';
-import PartnerMain from 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/check.svg'
-import LastMain from 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/footer-small-main.png'
-import LastLeft from 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/footer-small-left.png'
-import PartnertMain from 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/partner-main.svg'
-import ContactMain from 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/contact-main.png'
-import HeroSecondImage from 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/hero-second.png'
-import HeroMainGif from 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/hero-main-gif.gif'
-import HeroMainImage from 'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/hero-main-png.png'
+
+import PartnerMain from '../../assets/images/check.svg'
+import LastMain from '../../assets/images/footer-small-main.png'
+import LastLeft from '../../assets/images/footer-small-left.png'
+import PartnertMain from '../../assets/images/partner-main.svg'
+import ContactMain from '../../assets/images/contact-main.png'
+import HeroSecondImage from '../../assets/images/hero-second.png'
+import HeroMainImage from '../../assets/images/hero-main-png.png'
+import HeroMainGif from '../../assets/images/animations/hero-main-gif.gif'
 
 
 
