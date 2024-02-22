@@ -18,7 +18,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import useIsBig from "@/app/hooks/useIsBig"
 import { useEffect, useState } from "react"
 
- 
+
 interface ButtonProps {
   scrollToTarget: () => void;
   targetRef: React.RefObject<HTMLDivElement>;
@@ -44,7 +44,7 @@ const Hero = ({ scrollToTarget, targetRef }: ButtonProps) => {
     }} m="1rem" ref={targetRef}>
       <Header />
       <Grid container height="100%">
-        <Grid item lg={6} sm={6} xs={12} height="100%">
+        <Grid item lg={4} sm={4} xs={12} height="100%">
           {isMobile ? (
             <>
               <Flex>
@@ -61,64 +61,19 @@ const Hero = ({ scrollToTarget, targetRef }: ButtonProps) => {
           ) : (
             <Flex style={{ position: 'relative', height: '100%' }} gap="0rem" justifyContent="end">
               <Box position="relative" right="4rem">
-                {!isMobile && (
-                  <Heading fontSize="90px" fontFamily="SEN bold" color={DEFAULT_COLORS.White}>Leading  <br /> Launches</Heading>
-                )}
-                <Flex style={{ marginTop: '3rem', marginRight: '5rem' }}>
-                  <ButtonWithIcon background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} borderRadius="30px" icon={
-                    <IconButton background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White}><ArrowDownwardIcon sx={{ color: DEFAULT_COLORS.White }} /></IconButton>
-                  } onClick={() => scrollToTarget()}>How to join?</ButtonWithIcon>
-                  <Button background={DEFAULT_COLORS.Blue} border borderColor={DEFAULT_COLORS.White} >Read Docs</Button>
-                </Flex>
+
                 <Box mt="5rem" mr="12rem">
-                  <Flex>
-                    <Button borderRadius="25px" padding=".6rem 1.2rem">
-                      <Box sx={{
-                        "&:hover": {  // Use "&:hover" instead of ":hover"
-                          color: DEFAULT_COLORS.Blue
-                        },
-                        cursor: 'pointer',
-                      }}><EmailIcon fontSize="small" /></Box>
 
-                    </Button>
-                    <Button borderRadius="25px" padding=".6rem 1.2rem">
-                      <Box sx={{
-                        "&:hover": {  // Use "&:hover" instead of ":hover"
-                          color: DEFAULT_COLORS.Blue
-                        },
-                        cursor: 'pointer',
-                      }}>
-                        <TelegramIcon fontSize="small" />
-                      </Box>
-                      <Box sx={{
-                        "&:hover": {  // Use "&:hover" instead of ":hover"
-                          color: DEFAULT_COLORS.Blue
-                        },
-                        cursor: 'pointer',
-
-                      }}> <XIcon fontSize="small" /></Box>
-
-                      <Box sx={{
-                        "&:hover": {  // Use "&:hover" instead of ":hover"
-                          color: DEFAULT_COLORS.Blue
-                        },
-                        cursor: 'pointer'
-                      }}>
-
-                        <GoogleIcon fontSize="small" />
-                      </Box>
-                    </Button>
-                  </Flex>
                 </Box>
               </Box>
               {
                 !isMobile && (
                   <>
                     <Box left='0rem' top="0rem" position="absolute" sx={{ opacity: loading ? '0' : '0.8' }} >
-                      <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/hero-main-gif.gif'} width="85%" />
+                      <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/hero-main-gif.gif'} width="100%" />
                     </Box>
                     <Box left='0rem' top="0rem" position="absolute" sx={{ opacity: loading ? '0.8' : '0' }} >
-                      <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/hero-main-png.png'} width="85%" />
+                      <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/hero-main-png.png'} width="100%" />
                     </Box>
                   </>
 
@@ -129,19 +84,28 @@ const Hero = ({ scrollToTarget, targetRef }: ButtonProps) => {
           )}
 
         </Grid>
-        <Grid item lg={6} sm={6} xs={12} height="100%">
-          <Flex justifyContent="end" style={{ position: 'relative', height: '100%' }} >
+        <Grid item lg={4} sm={4} xs={12} height="100%">
+          <Box height="100%" display="flex" justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+            {!isMobile && (
+              <>
+                <Heading alignItems="center" fontSize="100px" lineHeight="100px" fontFamily="SEN bold" color={DEFAULT_COLORS.White}>Leading</Heading>
+                <Heading alignItems="center" fontSize="100px" lineHeight="100px" fontFamily="SEN bold" color={DEFAULT_COLORS.White}>Launches</Heading>
+              </>
+            )}
+
+         
             <SignIn />
+          </Box>
+        </Grid>
+        <Grid item lg={4} sm={4} xs={12} height="100%">
+          <Flex justifyContent="end" style={{ position: 'relative', height: '100%' }} >
             {!isMobile && (
               <Box position={"relative"}>
-                <Box width="250px" position="relative">
-                  <Image src={IMAGE_COLLECTIONS.landingsecondary1} width="100%" style={{ position: 'absolute', top: '-300px', opacity: loading ? '0' : '1' }} />
-                  <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/hero-second.png'} width="100%" style={{ position: 'absolute', top: '-300px', opacity: loading ? '1' : '0' }} />
+                <Box width="300px" position="relative">
+                  <Image src={IMAGE_COLLECTIONS.landingsecondary1} width="100%" style={{ position: 'absolute', top: '-400px', opacity: loading ? '0' : '1' }} />
+                  <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/hero-second.png'} width="100%" style={{ position: 'absolute', top: '-400px', opacity: loading ? '1' : '0' }} />
                 </Box>
-
-
-
-                <Box position="absolute" bottom="-20rem" right="0px"  >
+                <Box position="absolute" bottom="-23rem" right="0px"  >
                   <Image src={IMAGE_COLLECTIONS.SwitchBoard} width="250px" />
                 </Box>
               </Box>
