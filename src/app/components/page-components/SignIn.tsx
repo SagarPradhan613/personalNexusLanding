@@ -16,14 +16,15 @@ import { CHAIN_NAMESPACES, WEB3AUTH_NETWORK } from "@web3auth/base";
 import { useEffect, useState } from "react"
 import ButtonWithIcon from '../utility-components/buttons/ButtonWithIcon';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 
 
 const SignIn = () => {
 
 
   const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
-  const [provider, setProvider] = useState(null);
-  const clientId = process.env.NEXT_PUBLIC_WEB3AUTH_CLIENTID
+  const [provider, setProvider] = useState<any>(null);
+  const clientId: any = process.env.NEXT_PUBLIC_WEB3AUTH_CLIENTID
 
   useEffect(() => {
     // setWeb3auth(1)
@@ -145,7 +146,7 @@ const SignIn = () => {
               <>
 
                 <ButtonWithIcon onClick={() => logout()} background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} borderRadius="30px" icon={
-                  <IconButton background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White}><ArrowDownwardIcon sx={{ color: DEFAULT_COLORS.White }} /></IconButton>
+                  <IconButton background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White}><PowerSettingsNewIcon sx={{ color: DEFAULT_COLORS.White }} /></IconButton>
                 } >Logout</ButtonWithIcon>
               </>
               :
