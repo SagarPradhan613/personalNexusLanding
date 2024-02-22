@@ -22,8 +22,8 @@ const SignIn = () => {
 
 
   const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
-  const [provider, setProvider] = useState<any>(null);
-  const clientId: any = process.env.NEXT_PUBLIC_WEB3AUTH_CLIENTID
+  const [provider, setProvider] = useState(null);
+  const clientId = process.env.NEXT_PUBLIC_WEB3AUTH_CLIENTID
 
   useEffect(() => {
     // setWeb3auth(1)
