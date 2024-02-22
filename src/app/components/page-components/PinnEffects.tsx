@@ -35,7 +35,7 @@ const PinnEffects = ({ setPinnedImage }: MyComponentProps) => {
                             <PinnedSection title='Engage' image={IMAGE_COLLECTIONS.PinSectionMini} description='Engage with Nexus community and compete with others in sharing the upcoming launches for a chance to win a spot.' />
                         </div>
                     ) : (
-                        <Flex style={{ marginLeft: '3rem', cursor: 'pointer', position: 'relative', zIndex: 1000 }} gap="3rem"><div className='dot'></div><div onMouseOver={() => onMouse(1)} style={{ textAlign: 'start', fontSize: '25px' }}>Engage</div></Flex>
+                        <Flex className="hover-scale" style={{ marginLeft: '3rem', cursor: 'pointer', position: 'relative', zIndex: 1000 }} gap="3rem"><div className='dot'></div><div onClick={() => onMouse(1)} style={{ textAlign: 'start', fontSize: '25px' }}>Engage</div></Flex>
                     )
                 }
                 {
@@ -44,7 +44,7 @@ const PinnEffects = ({ setPinnedImage }: MyComponentProps) => {
                             <PinnedSection title='Snapshot' image={IMAGE_COLLECTIONS.PinnedSectionMini2} description='Snapshots are taken of all the competing profiles and wallets.' />
                         </div>
                     ) : (
-                        <Flex style={{ marginLeft: '3rem', cursor: 'pointer', position: 'relative', zIndex: 1000 }} gap="3rem"><div className='dot'></div><div onMouseOver={() => onMouse(2)} style={{ textAlign: 'start', fontSize: '25px' }}>Snapshot</div></Flex>
+                        <Flex className="hover-scale" style={{ marginLeft: '3rem', cursor: 'pointer', position: 'relative', zIndex: 1000 }} gap="3rem"><div className='dot'></div><div onClick={() => onMouse(2)} style={{ textAlign: 'start', fontSize: '25px' }}>Snapshot</div></Flex>
                     )
                 }
                 {
@@ -53,7 +53,7 @@ const PinnEffects = ({ setPinnedImage }: MyComponentProps) => {
                             <PinnedSection title='Lottery' image={IMAGE_COLLECTIONS.PinnedSectionMini3} description='Nexus smart contract withdraws a lottery for each launch and selects limited random profiles which will be investing.' />
                         </div>
                     ) : (
-                        <Flex style={{ marginLeft: '3rem', cursor: 'pointer', position: 'relative', zIndex: 1000 }} gap="3rem"><div className='dot'></div><div onMouseOver={() => onMouse(3)} style={{ textAlign: 'start', fontSize: '25px' }}>Lottery</div></Flex>
+                        <Flex className="hover-scale" style={{ marginLeft: '3rem', cursor: 'pointer', position: 'relative', zIndex: 1000 }} gap="3rem"><div className='dot'></div><div onClick={() => onMouse(3)} style={{ textAlign: 'start', fontSize: '25px' }}>Lottery</div></Flex>
                     )
                 }
                 {
@@ -62,7 +62,7 @@ const PinnEffects = ({ setPinnedImage }: MyComponentProps) => {
                             <PinnedSection title='Contribution' image={IMAGE_COLLECTIONS.PinnedSectionMini4} description='Selected profiles and wallets invest their funds into the sale and claim purchased tokens according to the vesting period.' />
                         </div>
                     ) : (
-                        <Flex style={{ marginLeft: '3rem', cursor: 'pointer', position: 'relative', zIndex: 1000 }} gap="3rem"><div className='dot'></div><div onMouseOver={() => onMouse(4)} style={{ textAlign: 'start', fontSize: '25px' }}>Contribution</div></Flex>
+                        <Flex className="hover-scale" style={{ marginLeft: '3rem', cursor: 'pointer', position: 'relative', zIndex: 1000 }} gap="3rem"><div className='dot'></div><div onClick={() => onMouse(4)} style={{ textAlign: 'start', fontSize: '25px' }}>Contribution</div></Flex>
                     )
                 }
             </Flex>

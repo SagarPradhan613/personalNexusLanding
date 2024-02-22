@@ -19,7 +19,7 @@ const ContactForm = () => {
                 <TextField background={DEFAULT_COLORS.White} border borderColor={DEFAULT_COLORS.Light} fullWidth borderRadius='17px' placeholder='Message' />
                 <Box mt="1rem" mb="2rem" width="100%">
 
-                <ButtonWithIcon fullWidth background={DEFAULT_COLORS.Blue} icon={<IconButton background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.Blue}><ArrowForwardIcon /></IconButton>}>Get Started</ButtonWithIcon>
+                <ButtonWithIcon fullWidth background={DEFAULT_COLORS.Blue} icon={<IconButton background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.Blue}><ArrowForwardIcon /></IconButton>}>Send Message</ButtonWithIcon>
                 </Box>
             </Flex>
         </Container>
