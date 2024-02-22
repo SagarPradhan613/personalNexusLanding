@@ -9,12 +9,17 @@ import useIsMobile from '@/app/hooks/useIsMobile'
 import { DEFAULT_COLORS } from '@/app/utils/colors'
 import { IMAGE_COLLECTIONS } from '@/app/utils/images'
 
-const ContactSection = () => {
+interface TargetProps {
+    targetRef: React.RefObject<HTMLDivElement>;
+    scrollToTarget: () => void;
+}
+
+const ContactSection = ({ targetRef, scrollToTarget }: TargetProps) => {
     const boxRef = useIntersectionAnimation() as RefObject<HTMLDivElement>;
     const isMobile = useIsMobile()
     return (
 
-        <Container maxWidth="lg" sx={{ height: '100vh' }}>
+        <Container maxWidth="lg" sx={{ height: '100vh' }} ref={targetRef}>
             <Box my="6rem" ref={boxRef} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%' }}>
                 <Grid container>
                     <Grid item lg={6} sm={6} xs={12}>

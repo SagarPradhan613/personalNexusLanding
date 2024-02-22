@@ -12,13 +12,11 @@ import JoinCard from '@/app/components/page-components/cards/JoinCard'
 import useIntersectionAnimation from '@/app/hooks/useIntersectionAnimation'
 import LeftShadow from '@/app/components/page-components/LeftShadow'
 import useIsMobile from '@/app/hooks/useIsMobile'
+import Gif from '../../../assets/images/join-gif1crop.gif'
 
-interface TargetProps {
-    targetRef: React.RefObject<HTMLDivElement>;
-    scrollToTarget: () => void;
-}
 
-const JoinSection = ({ targetRef, scrollToTarget }: TargetProps) => {
+
+const JoinSection = () => {
     const boxRef = useIntersectionAnimation();
     const isMobile = useIsMobile()
     return (
@@ -26,7 +24,7 @@ const JoinSection = ({ targetRef, scrollToTarget }: TargetProps) => {
             <Box position="absolute" left="0px" top="0px">
                 <LeftShadow />
             </Box>
-            <ContainerBox background={DEFAULT_COLORS.Dark_Light} style={{ height: isMobile ? "100%" : "95vh", display: 'flex', justifyContent: 'center', alignItems: 'center' }} ref={targetRef}>
+            <ContainerBox background={DEFAULT_COLORS.Dark_Light} style={{ height: isMobile ? "100%" : "95vh", display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
                 <Container maxWidth="xl">
                     <Grid container>
                         <Grid item lg={4} sm={4} xs={12}>
@@ -37,7 +35,7 @@ const JoinSection = ({ targetRef, scrollToTarget }: TargetProps) => {
                                 </Flex>
                                 <Text textAlign={isMobile ? 'center' : 'start'} fontSize='16px' maxWidth='250px' lineHeight='19px' color={DEFAULT_COLORS.Light}>Within a few clicks you can become a part of Nexus, we’ve made the joining process as easy as it can be.</Text>
                                 <Box mt="3rem">
-                                    <ButtonWithIcon icon={<IconButton background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White}><ArrowDownwardIcon sx={{ color: DEFAULT_COLORS.White }} /></IconButton>} background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} onClick={() => scrollToTarget()}>Join Now</ButtonWithIcon>
+                                    <ButtonWithIcon icon={<IconButton background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White}><ArrowDownwardIcon sx={{ color: DEFAULT_COLORS.White }} /></IconButton>} background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} >Join Now</ButtonWithIcon>
                                 </Box>
                             </Box>
                         </Grid>

@@ -9,7 +9,6 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Input from '../utility-components/input/Input';
 import NexusLogo from '../../../assets/images/NexusLogo.svg'
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import IconButton from '../utility-components/buttons/IconButton';
 import { Web3Auth } from "@web3auth/modal";
 import { CHAIN_NAMESPACES, WEB3AUTH_NETWORK } from "@web3auth/base";
@@ -17,6 +16,7 @@ import { useEffect, useState } from "react"
 import ButtonWithIcon from '../utility-components/buttons/ButtonWithIcon';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 
 const SignIn = () => {
@@ -152,8 +152,8 @@ const SignIn = () => {
               :
 
               <ButtonWithIcon onClick={() => login()} background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} borderRadius="30px" icon={
-                <IconButton background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White}><ArrowDownwardIcon sx={{ color: DEFAULT_COLORS.White }} /></IconButton>
-              } >Register Now</ButtonWithIcon>
+                <IconButton background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White}><ArrowForwardIcon sx={{ color: DEFAULT_COLORS.White }} /></IconButton>
+              } >Signup / Login</ButtonWithIcon>
           }
           <Button background={DEFAULT_COLORS.Blue} border borderColor={DEFAULT_COLORS.White} >Read Docs</Button>
         </Flex>

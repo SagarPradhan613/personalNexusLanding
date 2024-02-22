@@ -69,10 +69,10 @@ const Hero = ({ scrollToTarget, targetRef }: ButtonProps) => {
               {
                 !isMobile && (
                   <>
-                    <Box left='0rem' top="0rem" position="absolute" sx={{ opacity: loading ? '0' : '0.8' }} >
+                    <Box left='0rem' top="0rem" position="absolute" sx={{ opacity: loading ? '0' : '1' }} >
                       <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusAnimations/hero-main-gif.gif'} width="100%" />
                     </Box>
-                    <Box left='0rem' top="0rem" position="absolute" sx={{ opacity: loading ? '0.8' : '0' }} >
+                    <Box left='0rem' top="0rem" position="absolute" sx={{ opacity: loading ? '1' : '0' }} >
                       <Image src={'https://nexusprotocol.s3.eu-north-1.amazonaws.com/NexusImages/hero-main-png.png'} width="100%" />
                     </Box>
                   </>
@@ -88,13 +88,51 @@ const Hero = ({ scrollToTarget, targetRef }: ButtonProps) => {
           <Box height="100%" display="flex" justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
             {!isMobile && (
               <>
-                <Heading alignItems="center" fontSize="100px" lineHeight="100px" fontFamily="SEN bold" color={DEFAULT_COLORS.White}>Leading</Heading>
+                <Heading alignItems="center" fontSize="100px" lineHeight="120px" fontFamily="SEN bold" color={DEFAULT_COLORS.White}>Leading</Heading>
                 <Heading alignItems="center" fontSize="100px" lineHeight="100px" fontFamily="SEN bold" color={DEFAULT_COLORS.White}>Launches</Heading>
               </>
             )}
 
-         
+
             <SignIn />
+            <Flex style={{ marginBottom: '2rem' }}>
+              <Button borderRadius="25px" padding=".6rem 1.2rem">
+                <Box sx={{
+                  "&:hover": {  // Use "&:hover" instead of ":hover"
+                    color: DEFAULT_COLORS.Blue
+                  },
+                  cursor: 'pointer',
+                }} onClick={() => scrollToTarget()}><EmailIcon fontSize="small" /></Box>
+
+              </Button>
+              <Button borderRadius="25px" padding=".6rem 1.2rem">
+                <Box sx={{
+                  "&:hover": {  // Use "&:hover" instead of ":hover"
+                    color: DEFAULT_COLORS.Blue
+                  },
+                  cursor: 'pointer',
+                }}>
+                  <TelegramIcon fontSize="small" />
+                </Box>
+                <Box sx={{
+                  "&:hover": {  // Use "&:hover" instead of ":hover"
+                    color: DEFAULT_COLORS.Blue
+                  },
+                  cursor: 'pointer',
+
+                }}> <XIcon fontSize="small" /></Box>
+
+                <Box sx={{
+                  "&:hover": {  // Use "&:hover" instead of ":hover"
+                    color: DEFAULT_COLORS.Blue
+                  },
+                  cursor: 'pointer'
+                }}>
+
+                  <GoogleIcon fontSize="small" />
+                </Box>
+              </Button>
+            </Flex>
           </Box>
         </Grid>
         <Grid item lg={4} sm={4} xs={12} height="100%">

@@ -30,10 +30,10 @@ const Heading = ({
             textAlign={textAlign as TypographyProps['textAlign']}
             whiteSpace={lineBrake ? 'nowrap' : 'normal'}
             sx={{
-                background: isGradient ? `-webkit-linear-gradient(${DEFAULT_COLORS.Text_Gradient})` : color,
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
+                color: isGradient ? '' : color
             }}
+            className={isGradient ? 'grad-text' : ''}
+
         >
             {children}
         </Typography>

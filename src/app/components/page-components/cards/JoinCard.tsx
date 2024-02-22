@@ -36,9 +36,9 @@ const JoinCard = ({ image, hoverImage, title, description }: JoinCardProps) => {
         <Container borderRadius='30px' padding='1rem 1.5rem' ref={boxRef} onMouseOver={onMouse} onMouseLeave={offMouse} height={'4.5rem'} fullWidth maxWidth="280px" style={{ margin: '5px' }}>
             <Flex justifyContent='space-between'>
                 <Flex>
-                    <Box width="60px" height="60px" position="relative">
-                        <img src={image} width='50px' loading='eager' style={{ opacity: hovered ? '0' : '1', position: 'absolute', left: '0px', top: '0px', marginTop: '.5rem' }} />
-                        <img src={hoverImage} width='50px' loading='eager' style={{ opacity: hovered ? '1' : '0', position: 'absolute', left: '0px', top: '0px', marginTop: '.5rem' }} />
+                    <Box width="50px" height="50px" position="relative"> 
+                        <img src={image} loading='eager' style={{ opacity: hovered ? '0' : '1', position: 'absolute', left: '0px', top: '0px', marginTop: '.5rem', width: '50px', height: '50px' }} />
+                        <img src={hoverImage} loading='eager' style={{ opacity: hovered ? '1' : '0', position: 'absolute', left: '0px', top: '0px', marginTop: '.5rem', width: '50px', height: '50px' }} />
                     </Box>
                     <Box height="50px">
                         <Text lineHeight='24px' >{title}</Text>

@@ -8,7 +8,7 @@ import { IMAGE_COLLECTIONS } from '@/app/utils/images'
 
 const Scroller = () => {
     return (
-        <div style={{ height: '10vh',position:'relative',bottom:'5rem' }}>
+        <div style={{ height: '10vh', position: 'relative', bottom: '5rem' }}>
             <Box my={'10rem'}>
                 <div className='scroller-container'>
                     <div className='scroller-content'>

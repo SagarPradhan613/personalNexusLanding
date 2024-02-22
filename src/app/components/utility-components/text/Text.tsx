@@ -25,11 +25,10 @@ const Text = ({
       textAlign={textAlign as TypographyProps['textAlign']} // Correctly typing textAlign
       maxWidth={maxWidth}
       whiteSpace={lineBrake ? 'nowrap' : 'normal'}
-      sx={isGradient ? {
-        background: `-webkit-linear-gradient(${DEFAULT_COLORS.Text_Gradient})`,
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent'
-      } : {}}
+      sx={{
+        color: isGradient ? '' : color
+    }}
+    className={isGradient ? 'grad-text' : ''}
     >
       {children}
     </Typography>
