@@ -65,7 +65,7 @@ const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
       alert("Already loggedin");
       return;
     }
-    const web3authProvider = await web3auth.connect();
+    const web3authProvider = await web3auth?.connect();
     console.log(web3authProvider);
     
   }
