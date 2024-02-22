@@ -18,6 +18,7 @@ import GoogleIcon from '@mui/icons-material/Google';
 import useIsBig from "@/app/hooks/useIsBig"
 import { useEffect, useState } from "react"
 
+ 
 interface ButtonProps {
   scrollToTarget: () => void;
   targetRef: React.RefObject<HTMLDivElement>;
@@ -30,6 +31,8 @@ const Hero = ({ scrollToTarget, targetRef }: ButtonProps) => {
   useEffect(() => {
     setTimeout(() => { setLoading(false) }, 5000)
   }, [])
+
+
   return (
 
 
@@ -138,7 +141,7 @@ const Hero = ({ scrollToTarget, targetRef }: ButtonProps) => {
 
 
 
-                <Box position="absolute" bottom="-20rem" right="0px">
+                <Box position="absolute" bottom="-20rem" right="0px"  >
                   <Image src={IMAGE_COLLECTIONS.SwitchBoard} width="250px" />
                 </Box>
               </Box>

@@ -9,10 +9,13 @@ import PartnerSection from '../view/landing/PartnerSection';
 import LastSection from '../view/landing/LastSection';
 import { useRef } from 'react';
 
+
+
 const Main = () => {
   const [loading, setLoading] = useState(true);
   const targetRef = useRef<HTMLDivElement>(null);
   const targetRefSign = useRef<HTMLDivElement>(null);
+
 
   const scrollToTarget = () => {
     if (targetRef.current) {
@@ -33,6 +36,8 @@ const Main = () => {
     }, 10); // Adjust the timeout duration as needed
     return () => clearTimeout(timeout);
   }, []);
+
+
 
   return (
     <>
