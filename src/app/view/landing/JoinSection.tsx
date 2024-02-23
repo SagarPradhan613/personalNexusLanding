@@ -15,9 +15,13 @@ import useIsMobile from '@/app/hooks/useIsMobile'
 import Gif from '../../../assets/images/join-gif1crop.gif'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
+interface TargetProps {
+    scrollToTarget: () => void;
+}
 
 
-const JoinSection = () => {
+
+const JoinSection = ({ scrollToTarget }: TargetProps) => {
     const boxRef = useIntersectionAnimation();
     const isMobile = useIsMobile()
     return (
@@ -36,7 +40,7 @@ const JoinSection = () => {
                                 </Flex>
                                 <Text textAlign={isMobile ? 'center' : 'start'} fontSize='16px' maxWidth='250px' lineHeight='19px' color={DEFAULT_COLORS.Light}>Within a few clicks you can become a part of Nexus, we’ve made the joining process as easy as it can be.</Text>
                                 <Box mt="3rem">
-                                    <ButtonWithIcon icon={<IconButton background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White}><ArrowForwardIcon sx={{ color: DEFAULT_COLORS.White }} /></IconButton>} background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} >Join Now</ButtonWithIcon>
+                                    <ButtonWithIcon icon={<IconButton background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White}><ArrowForwardIcon sx={{ color: DEFAULT_COLORS.White }} /></IconButton>} background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} onClick={() => scrollToTarget()}>Join Now</ButtonWithIcon>
                                 </Box>
                             </Box>
                         </Grid>

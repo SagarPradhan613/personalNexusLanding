@@ -50,7 +50,7 @@ const Main = () => {
           <LandingSecondary />
           <Scroller />
           <PinSectionCompoent />
-          <JoinSection  />
+          <JoinSection  scrollToTarget={scrollToTargetSign}/>
           <ContactSection targetRef={targetRef} scrollToTarget={scrollToTargetSign}/>
           <PartnerSection />
           <LastSection />

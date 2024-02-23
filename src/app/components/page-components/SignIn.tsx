@@ -146,7 +146,7 @@ const SignIn = () => {
               <>
 
                 <ButtonWithIcon onClick={() => logout()} background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} borderRadius="30px" icon={
-                  <IconButton background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White}><PowerSettingsNewIcon sx={{ color: DEFAULT_COLORS.White }} /></IconButton>
+                  <Box width="35px" height="35px" borderRadius={'50%'} sx={{ background: DEFAULT_COLORS.Blue, color: DEFAULT_COLORS.White }} display={'flex'} justifyContent={'center'} alignItems={'center'}><PowerSettingsNewIcon sx={{ color: DEFAULT_COLORS.White }} /></Box>
                 } >Logout</ButtonWithIcon>
               </>
               :

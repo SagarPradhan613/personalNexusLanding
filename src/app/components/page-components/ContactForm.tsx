@@ -19,6 +19,12 @@ const ContactForm = () => {
     const [message, setMessage] = useState('')
     const [done, setDone] = useState('')
     const handleSubmit = () => {
+        setDone('')
+        if (name.length === 0 || email.length === 0 || message.length === 0) {
+            setDone('Please fill the form')
+            setTimeout(() => { setDone('') }, 10000)
+            return false
+        }
 
         axios.post('https://kirby-test-api.vercel.app/sendConfirmationEmail', {
             email,
@@ -26,13 +32,13 @@ const ContactForm = () => {
             message // Sending form data to the server
         }).then((response) => {
             console.log(response.data);
-            setDone('Successfully send mail')
+            setDone('Message Sent Successfully')
             setTimeout(() => { setDone('') }, 10000)
             setName(''); setEmail(''); setMessage('');
             // Handle success response from the server
         }).catch((error) => {
             console.error('Error occurred:', error);
-            setDone('Error sending mail')
+            setDone('Error sending message')
             setTimeout(() => { setDone('') }, 10000)
             setName(''); setEmail(''); setMessage('');
             // Handle error response from the server

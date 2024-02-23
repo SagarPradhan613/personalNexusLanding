@@ -6,6 +6,7 @@ import Image from '../../utility-components/image/Image'
 import Button from '../../utility-components/buttons/Button'
 import Text from '../../utility-components/text/Text'
 import Flex from '../../utility-components/flex/Flex'
+import useIntersectionAnimation from '@/app/hooks/useIntersectionAnimation'
 
 interface ImageProps {
     image: string
@@ -13,9 +14,9 @@ interface ImageProps {
 }
 
 const SecondayCard = ({ image, description }: ImageProps) => {
-
+    const boxRef = useIntersectionAnimation();
     return (
-        <Container background={DEFAULT_COLORS.Dark_Light} width='100%' maxWidth='350px' borderRadius='25px' >
+        <Container background={DEFAULT_COLORS.Dark_Light} width='100%' maxWidth='350px' borderRadius='25px' ref={boxRef}>
             <Grid container>
                 <Grid item lg={4} sm={4} xs={4}>
                     <button style={{

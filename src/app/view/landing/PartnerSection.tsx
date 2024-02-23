@@ -18,9 +18,7 @@ const PartnerSection = () => {
     const isMobile = useIsMobile()
     return (
         <Box mx="10px" mt="7rem" ref={boxRef} position="relative">
-            <Box position="absolute" right="0px" top="-320px">
-                <RightShadow />
-            </Box>
+          
             <Box position="absolute" left="0px" top="100px">
                 <LeftShadow />
             </Box>
