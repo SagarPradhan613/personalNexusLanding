@@ -189,3 +189,86 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.white-btn {
+  cursor: pointer;
+  background: #ffffff;
+  color: black;
+  transition: all 0.4s ease-in;
+}
+
+.white-btn:hover {
+  background: black;
+  color: white;
+}
+.blue-btn {
+  cursor: pointer;
+  background-color: #0075ff;
+  color: white;
+  transition: all 0.4s ease-in;
+}
+
+.blue-btn:hover {
+  background: black;
+  color: white;
+}
+.white-btn {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: all 0.4s ease-in;
+}
+
+.white-btn:hover {
+  background: black;
+  color: white;
+}
+.black-btn {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  transition: all 0.4s ease-in;
+}
+.blue-btn1 {
+  cursor: pointer;
+  background-color: #0075ff;
+  color: white;
+  transition: all 0.4s ease-in;
+}
+
+.blue-btn1:hover {
+  background: white;
+  color: black;
+}
+
+.hover-arrow {
+  animation: none; /* Disable animation by default */
+}
+
+.hover-arrow:hover {
+  animation: arrow 0.4s ease-in forwards; /* Enable animation on hover and apply the last keyframe's styles */
+}
+
+.icon {
+  position: absolute;
+  right: 5px;
+  top: auto;
+  bottom: auto;
+}
+.ic{
+
+}
+.ic:hover {
+  animation: arrow 0.4s ease-in forwards;
+  
+}
+
+@keyframes arrow {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+}

@@ -2,7 +2,7 @@ import { ComponentProps } from '../../../utils/types';
 import { DEFAULT_COLORS } from '../../../utils/colors';
 
 
-const IconButton = ({ background = DEFAULT_COLORS.black, children, color, borderRadius = "50%", icon }: ComponentProps) => {
+const IconButton = ({ background = DEFAULT_COLORS.black, children, color = DEFAULT_COLORS.White, borderRadius = "50%", hover = true }: ComponentProps) => {
     return (
         <button style={{
             background: background,
@@ -13,17 +13,17 @@ const IconButton = ({ background = DEFAULT_COLORS.black, children, color, border
             alignItems: 'center',
             gap: '1rem',
             border: 'none',
-            color: color,
             position: 'relative',
             height: '35px',
             fontFamily: 'SEN medium',
             whiteSpace: 'nowrap',
-            zIndex: 1000
-        }} className="hover-scale btn btn-white btn-animate">
-            {children}
-            <div style={{ position: 'absolute', right: '5px', top: 'auto', bottom: 'auto' }}>
-                {icon}
+            zIndex: 1000,
+            color: color
+        }} >
+            <div className={hover === true ? 'ic' : ''}>
+                {children}
             </div>
+
         </button>
     );
 };

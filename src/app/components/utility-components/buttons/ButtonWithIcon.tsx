@@ -1,12 +1,13 @@
 import { ComponentProps } from '../../../utils/types';
 import { DEFAULT_COLORS } from '../../../utils/colors';
+import { useState } from 'react';
 
 const white: string = DEFAULT_COLORS.White
 
-const ButtonWithIcon = ({ background = DEFAULT_COLORS.black, children, color = white, padding = ".8rem 4rem .8rem 1.2rem" , borderRadius = "25px", fullWidth = false, icon,onClick }: ComponentProps) => {
+const ButtonWithIcon = ({ background = DEFAULT_COLORS.black, children, color = white, padding = ".8rem 4rem .8rem 1.2rem", borderRadius = "25px", fullWidth = false, icon, onClick, type = "button" }: ComponentProps) => {
+
     return (
         <button style={{
-            background: background,
             padding: padding,
             borderRadius: borderRadius,
             width: fullWidth ? '100%' : 'auto',
@@ -15,16 +16,15 @@ const ButtonWithIcon = ({ background = DEFAULT_COLORS.black, children, color = w
             alignItems: 'center',
             gap: '1rem',
             border: 'none',
-            color: color,
             position: 'relative',
-            fontFamily:'SEN medium',
+            fontFamily: 'SEN medium',
             whiteSpace: 'nowrap',
-            fontSize:'18px',
-            zIndex:1000,
+            fontSize: '18px',
+            zIndex: 999,
             cursor: 'pointer'
-        }} className="hover-scale btn btn-white btn-animate" onClick={onClick}>
+        }} className={background === DEFAULT_COLORS.White ? 'white-btn' : background === DEFAULT_COLORS.Blue ? 'blue-btn' : 'white-btn'} onClick={onClick} type={type}>
             {children}
-            <div style={{ position: 'absolute', right: '5px', top: 'auto', bottom: 'auto' }}>
+            <div className='icon'>
                 {icon}
             </div>
         </button>

@@ -8,22 +8,54 @@ import IconButton from '../utility-components/buttons/IconButton'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Box } from '@mui/material'
 import Text from '../utility-components/text/Text'
+import React, { useState } from 'react'
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const ContactForm = () => {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+    const [done, setDone] = useState('')
+    const handleSubmit = () => {
+
+        axios.post('https://kirby-test-api.vercel.app/sendConfirmationEmail', {
+            email,
+            name,
+            message // Sending form data to the server
+        }).then((response) => {
+            console.log(response.data);
+            setDone('Successfully send mail')
+            setTimeout(() => { setDone('') }, 10000)
+            setName(''); setEmail(''); setMessage('');
+            // Handle success response from the server
+        }).catch((error) => {
+            console.error('Error occurred:', error);
+            setDone('Error sending mail')
+            setTimeout(() => { setDone('') }, 10000)
+            setName(''); setEmail(''); setMessage('');
+            // Handle error response from the server
+        });
+    };
+
     return (
         <Container background={DEFAULT_COLORS.White} fullWidth maxWidth='400px' borderRadius='30px' padding='1.5rem' >
             <Flex flexDirection="column">
-               <Text color={DEFAULT_COLORS.black} fontSize='24px' lineHeight='35px'>Contact Us</Text>
-                <Input background={DEFAULT_COLORS.White} border borderColor={DEFAULT_COLORS.Light} fullWidth borderRadius='17px' placeholder='Enter Name' color={DEFAULT_COLORS.Light} />
-                <Input background={DEFAULT_COLORS.White} border borderColor={DEFAULT_COLORS.Light} fullWidth borderRadius='17px' placeholder='Enter Email' />
-                <TextField background={DEFAULT_COLORS.White} border borderColor={DEFAULT_COLORS.Light} fullWidth borderRadius='17px' placeholder='Message' />
-                <Box mt="1rem" mb="2rem" width="100%">
+                <Text color={DEFAULT_COLORS.black} fontSize='24px' lineHeight='35px'>Contact Us</Text>
+                <Input background={DEFAULT_COLORS.White} border borderColor={DEFAULT_COLORS.Light} fullWidth borderRadius='17px' placeholder='Enter Name' value={name} color={DEFAULT_COLORS.Light} onChange={(e) => setName(e.target.value)} />
+                <Input background={DEFAULT_COLORS.White} border borderColor={DEFAULT_COLORS.Light} fullWidth borderRadius='17px' placeholder='Enter Email' value={email} color={DEFAULT_COLORS.Light} onChange={(e) => setEmail(e.target.value)} />
+                <TextField background={DEFAULT_COLORS.White} border borderColor={DEFAULT_COLORS.Light} fullWidth borderRadius='17px' placeholder='Message' value={message} color={DEFAULT_COLORS.Light} onChange={(e) => setMessage(e.target.value)} />
+                {done.length > 0 && <Text color={DEFAULT_COLORS.black} fontSize='15px' lineHeight='15px'>{done}</Text>}
+                <Box mt="1rem" mb="2rem" width="100%" >
 
-                <ButtonWithIcon fullWidth background={DEFAULT_COLORS.Blue} icon={<IconButton background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.Blue}><ArrowForwardIcon /></IconButton>}>Send Message</ButtonWithIcon>
+                    <ButtonWithIcon fullWidth background={DEFAULT_COLORS.Blue} icon={<IconButton background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.Blue}><ArrowForwardIcon /></IconButton>} onClick={handleSubmit}>Send Message</ButtonWithIcon>
+
                 </Box>
             </Flex>
+
         </Container>
     )
 }
 
-export default ContactForm
+export default ContactForm;

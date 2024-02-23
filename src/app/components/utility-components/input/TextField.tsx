@@ -3,7 +3,7 @@ import { DEFAULT_COLORS } from '../../../utils/colors';
 
 const Light: string = DEFAULT_COLORS.Light
 
-const TextField = ({ background = DEFAULT_COLORS.black, padding = ".8rem 1.2rem", borderRadius = "30px", fullWidth = false, border, borderColor, placeholder }: ComponentProps) => {
+const TextField = ({ background = DEFAULT_COLORS.black, padding = ".8rem 1.2rem", borderRadius = "30px", fullWidth = false, border, borderColor, placeholder, onChange, value }: ComponentProps) => {
     return (
         <textarea style={{
             background: background,
@@ -18,8 +18,8 @@ const TextField = ({ background = DEFAULT_COLORS.black, padding = ".8rem 1.2rem"
             color: Light,
             position: 'relative',
             resize: 'none',
-            fontFamily:"SEN medium"
-        }} className="input-outline-remove" placeholder={placeholder} rows={6} />
+            fontFamily: "SEN medium"
+        }} className="input-outline-remove" placeholder={placeholder} rows={6} onChange={onChange} value={value} />
 
     );
 };

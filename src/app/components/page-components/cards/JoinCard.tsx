@@ -7,7 +7,8 @@ import { DEFAULT_COLORS } from '@/app/utils/colors';
 import IconButton from '../../utility-components/buttons/IconButton';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import useIntersectionAnimation from '@/app/hooks/useIntersectionAnimation';
-import useIsTab from '@/app/hooks/useIsTab';
+import useIsTab from '@/app/hooks/useIsTab';  
+
 
 interface JoinCardProps {
     image: string;
@@ -36,7 +37,7 @@ const JoinCard = ({ image, hoverImage, title, description }: JoinCardProps) => {
         <Container borderRadius='30px' padding='1rem 1.5rem' ref={boxRef} onMouseOver={onMouse} onMouseLeave={offMouse} height={'4.5rem'} fullWidth maxWidth="280px" style={{ margin: '5px' }}>
             <Flex justifyContent='space-between'>
                 <Flex>
-                    <Box width="50px" height="50px" position="relative"> 
+                    <Box width="50px" height="50px" position="relative">
                         <img src={image} loading='eager' style={{ opacity: hovered ? '0' : '1', position: 'absolute', left: '0px', top: '0px', marginTop: '.5rem', width: '50px', height: '50px' }} />
                         <img src={hoverImage} loading='eager' style={{ opacity: hovered ? '1' : '0', position: 'absolute', left: '0px', top: '0px', marginTop: '.5rem', width: '50px', height: '50px' }} />
                     </Box>
@@ -46,7 +47,9 @@ const JoinCard = ({ image, hoverImage, title, description }: JoinCardProps) => {
                     </Box>
                 </Flex>
                 <Box mt="10px">
-                    <IconButton icon={<ArrowForwardIcon sx={{ color: DEFAULT_COLORS.White }} />} background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White} />
+                    <Box width="35px" height="35px" borderRadius={'50%'} sx={{ background: DEFAULT_COLORS.Blue, color: DEFAULT_COLORS.White }} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+                        <ArrowForwardIcon />
+                    </Box>
                 </Box>
             </Flex>
 

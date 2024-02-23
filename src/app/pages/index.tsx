@@ -8,6 +8,7 @@ import ContactSection from '../view/landing/ContactSection';
 import PartnerSection from '../view/landing/PartnerSection';
 import LastSection from '../view/landing/LastSection';
 import { useRef } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -53,6 +54,7 @@ const Main = () => {
           <ContactSection targetRef={targetRef} scrollToTarget={scrollToTargetSign}/>
           <PartnerSection />
           <LastSection />
+          
         </>
       )}
     </>

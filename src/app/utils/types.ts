@@ -18,19 +18,22 @@ export type ComponentProps = {
     justifyContent?: string
     alignItems?: string
     gap?: string | object | number | undefined
-    flexDirection?: object | string 
+    flexDirection?: object | string
     width?: string
     src?: string
     color?: string
     lineHeight?: string
     icon?: JSX.Element
     maxWidth?: string
-    textAlign?: string | object 
-    borderColor?:string
-    placeholder?:string
+    textAlign?: string | object
+    borderColor?: string
+    placeholder?: string
     className?: string
     hover?: boolean
     hoverColor?: string
     lineBrake?: boolean,
     onClick?: () => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    type?: 'button' | 'submit' | 'reset';
+    value?: string
 }

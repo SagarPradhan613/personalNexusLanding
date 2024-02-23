@@ -3,10 +3,11 @@ import { DEFAULT_COLORS } from '../../../utils/colors';
 
 const white: string = DEFAULT_COLORS.White;
 
-const Button = ({ background = DEFAULT_COLORS.black, children, color = white, padding = ".8rem 1.2rem", borderRadius = "30px", fullWidth = false,  border, borderColor,onClick }: ComponentProps) => {
+const Button = ({ background = DEFAULT_COLORS.black, children, color = white, padding = ".8rem 1.2rem", borderRadius = "30px", fullWidth = false, border, borderColor, onClick, hover = true }: ComponentProps) => {
     return (
         <button style={{
-            background: background,
+            // background: background,
+            // color: color,
             padding: padding,
             borderRadius: borderRadius,
             width: fullWidth ? '100%' : 'auto',
@@ -15,13 +16,12 @@ const Button = ({ background = DEFAULT_COLORS.black, children, color = white, pa
             alignItems: 'center',
             gap: '1rem',
             border: border ? `1px solid ${borderColor}` : 'none',
-            color: color, // Assign color directly
             position: 'relative',
             cursor: 'pointer',
-            fontFamily:'SEN medium',
+            fontFamily: 'SEN medium',
             whiteSpace: 'nowrap',
-            zIndex:1000
-        }} className={`hover-scale btn btn-white btn-animate` } onClick={onClick}>
+            zIndex: 1000
+        }} onClick={onClick} className={background === DEFAULT_COLORS.black ? 'black-btn' : 'blue-btn1'}>
             {children}
         </button>
     );
