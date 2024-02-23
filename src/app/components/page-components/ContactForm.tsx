@@ -45,7 +45,7 @@ const ContactForm = () => {
                 <Text color={DEFAULT_COLORS.black} fontSize='24px' lineHeight='35px'>Contact Us</Text>
                 <Input background={DEFAULT_COLORS.White} border borderColor={DEFAULT_COLORS.Light} fullWidth borderRadius='17px' placeholder='Enter Name' value={name} color={DEFAULT_COLORS.Light} onChange={(e) => setName(e.target.value)} />
                 <Input background={DEFAULT_COLORS.White} border borderColor={DEFAULT_COLORS.Light} fullWidth borderRadius='17px' placeholder='Enter Email' value={email} color={DEFAULT_COLORS.Light} onChange={(e) => setEmail(e.target.value)} />
-                <TextField background={DEFAULT_COLORS.White} border borderColor={DEFAULT_COLORS.Light} fullWidth borderRadius='17px' placeholder='Message' value={message} color={DEFAULT_COLORS.Light} onChange={(e) => setMessage(e.target.value)} />
+                <TextField background={DEFAULT_COLORS.White} border borderColor={DEFAULT_COLORS.Light} fullWidth borderRadius='17px' placeholder='Message' value={message} color={DEFAULT_COLORS.Light} onChangeText={(e) => setMessage(e.target.value)} />
                 {done.length > 0 && <Text color={DEFAULT_COLORS.black} fontSize='15px' lineHeight='15px'>{done}</Text>}
                 <Box mt="1rem" mb="2rem" width="100%" >
 

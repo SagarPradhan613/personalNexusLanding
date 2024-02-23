@@ -33,7 +33,8 @@ export type ComponentProps = {
     hoverColor?: string
     lineBrake?: boolean,
     onClick?: () => void;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+    onChangeText?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
     type?: 'button' | 'submit' | 'reset';
     value?: string
 }
