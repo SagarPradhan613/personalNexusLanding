@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material"
+import { Box, Grid, Typography } from "@mui/material"
 import Header from "../../components/page-components/Header"
 import { DEFAULT_COLORS } from "@/app/utils/colors"
 import Image from "@/app/components/utility-components/image/Image"
@@ -41,9 +41,9 @@ const Hero = ({ scrollToTarget, targetRef }: ButtonProps) => {
       borderRadius: '15px',
       position: 'relative',
       height: isBig ? { sm: '98vh', xs: '100%' } : '80vh',
-      minHeight:"95vh"
+      minHeight: isMobile ? '120vh' : '110vh'
     }} m="1rem" ref={targetRef}>
-      <Header /> 
+      <Header />
       <Grid container height="100%">
         <Grid item lg={4} sm={4} xs={12} height="100%">
           {isMobile ? (
@@ -56,7 +56,7 @@ const Hero = ({ scrollToTarget, targetRef }: ButtonProps) => {
                   <Image src={IMAGE_COLLECTIONS.landingsecondary1} width="100%" />
                 </Box>
               </Flex>
-              <Heading fontSize="50px" fontFamily="SEN bold" color={DEFAULT_COLORS.White} textAlign="center">Leading Launches</Heading>
+              <Typography mb={'3rem'} fontSize="60px" fontFamily="SEN bold" color={DEFAULT_COLORS.White} textAlign="center" lineHeight="60px">Leading <br /> Launches</Typography>
             </>
 
           ) : (

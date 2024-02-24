@@ -19,8 +19,8 @@ const LandingSecondary = () => {
             <Box position="absolute" left="0px" top="400px">
                 <LeftShadow />
             </Box>
-            <Container maxWidth="lg" sx={{ height: isMobile ? '100vh' : '70vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Box my={'4rem'} ref={boxRef}>
+            <Container maxWidth="lg" sx={{ height: isMobile ? '120vh' : '70vh', display: 'flex', justifyContent: 'center', alignItems: 'center',marginTop:'8rem' }}>
+                <Box my={'4rem'} >
                     <Flex flexDirection="column" gap="3rem">
                         <Flex flexDirection={{ sm: 'row', xs: 'column' }} gap={{ sm: '1rem', xs: '0rem' }}>
                             <Heading color={DEFAULT_COLORS.White} lineHeight={isMobile ? '35px' : '55px'}>What Makes us </Heading>

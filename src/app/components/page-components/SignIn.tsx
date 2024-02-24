@@ -17,6 +17,7 @@ import ButtonWithIcon from '../utility-components/buttons/ButtonWithIcon';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import useIsMobile from '@/app/hooks/useIsMobile';
 
 
 const SignIn = () => {
@@ -25,6 +26,7 @@ const SignIn = () => {
   const [web3auth, setWeb3auth] = useState<Web3Auth | null>(null);
   const [provider, setProvider] = useState<any>(null);
   const clientId: any = process.env.NEXT_PUBLIC_WEB3AUTH_CLIENTID
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     // setWeb3auth(1)
@@ -140,22 +142,22 @@ const SignIn = () => {
         web3auth &&
 
 
-        <Flex style={{ marginTop: '1rem' }}>
+        <Flex style={{ marginTop: '2rem', flexDirection: isMobile ? 'column' : 'row', width: '100%', maxWidth: '400px' }}>
           {
             provider ?
               <>
 
-                <ButtonWithIcon onClick={() => logout()} background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} borderRadius="30px" icon={
+                <ButtonWithIcon fullWidth onClick={() => logout()} background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} borderRadius="30px" icon={
                   <Box width="35px" height="35px" borderRadius={'50%'} sx={{ background: DEFAULT_COLORS.Blue, color: DEFAULT_COLORS.White }} display={'flex'} justifyContent={'center'} alignItems={'center'}><PowerSettingsNewIcon sx={{ color: DEFAULT_COLORS.White }} /></Box>
                 } >Logout</ButtonWithIcon>
               </>
               :
 
-              <ButtonWithIcon onClick={() => login()} background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} borderRadius="30px" icon={
+              <ButtonWithIcon fullWidth onClick={() => login()} background={DEFAULT_COLORS.White} color={DEFAULT_COLORS.black} borderRadius="30px" icon={
                 <IconButton background={DEFAULT_COLORS.Blue} color={DEFAULT_COLORS.White}><ArrowForwardIcon sx={{ color: DEFAULT_COLORS.White }} /></IconButton>
               } >Signup / Login</ButtonWithIcon>
           }
-          <Button background={DEFAULT_COLORS.Blue} border borderColor={DEFAULT_COLORS.White} >Read Docs</Button>
+          <Button fullWidth background={DEFAULT_COLORS.Blue} border borderColor={DEFAULT_COLORS.White} >Read Docs</Button>
         </Flex>
 
       }
