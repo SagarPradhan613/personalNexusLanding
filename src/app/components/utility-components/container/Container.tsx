@@ -2,7 +2,6 @@ import { Box, BoxProps } from '@mui/material';
 import { DEFAULT_COLORS } from '@/app/utils/colors';
 import { ComponentProps } from '@/app/utils/types';
 import { forwardRef } from 'react';
-import './container.css';
 
 const Container = forwardRef<HTMLDivElement, ComponentProps & BoxProps>(
   function Container(
@@ -20,7 +19,6 @@ const Container = forwardRef<HTMLDivElement, ComponentProps & BoxProps>(
   ) {
     return (
       <Box
-        className="test-hover"
         sx={{
           border: `1px solid ${DEFAULT_COLORS.Light}`,
           borderRadius,

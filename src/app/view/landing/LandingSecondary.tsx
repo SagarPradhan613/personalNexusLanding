@@ -67,7 +67,7 @@ const LandingSecondary = () => {
                             </Flex>
                             <Text color={DEFAULT_COLORS.Light} maxWidth="300px" textAlign="center" lineHeight="25px" fontSize="17px">With a seamless and secure platform, Nexus is redefining the excellence of launches.</Text>
                             <Flex style={{ width: '100%' }} flexDirection={{ sm: 'row', xs: 'column' }} >
-                                <SecondayCard image={IMAGE_COLLECTIONS.NexusN} description="Community backed launches infused into an innovative platform." />
+                                <SecondayCard  image={IMAGE_COLLECTIONS.NexusN} description="Community backed launches infused into an innovative platform." />
                                 <SecondayCard image={IMAGE_COLLECTIONS.Hammer} description="Premium experience on all devices with user-friendly interface." />
                                 <SecondayCard image={IMAGE_COLLECTIONS.Settings} description="Perfectly crafted tools for all new launchpad experience." />
                             </Flex>

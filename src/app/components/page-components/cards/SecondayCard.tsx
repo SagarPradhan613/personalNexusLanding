@@ -8,6 +8,7 @@ import Text from '../../utility-components/text/Text'
 import Flex from '../../utility-components/flex/Flex'
 import useIntersectionAnimation from '@/app/hooks/useIntersectionAnimation'
 import { RefObject } from 'react'
+import './card.css'
 
 interface ImageProps {
     image: string
@@ -17,8 +18,8 @@ interface ImageProps {
 const SecondayCard = ({ image, description }: ImageProps) => {
     const boxRef = useIntersectionAnimation() as RefObject<HTMLDivElement>;
     return (
-        <Container background={DEFAULT_COLORS.Dark_Light} width='100%' maxWidth='350px' borderRadius='25px' ref={boxRef}>
-            <Grid container>
+        <Container className='test-hover' background={DEFAULT_COLORS.Dark_Light} width='100%' maxWidth='350px' borderRadius='25px' ref={boxRef}>
+            <Grid  container>
                 <Grid item lg={4} sm={4} xs={4}>
                     <button style={{
                         display: 'flex',
