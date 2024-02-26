@@ -33,8 +33,9 @@ const SecondayCard = ({ image, description }: ImageProps) => {
                         background: DEFAULT_COLORS.Blue,
                         borderRadius: '15px',
                         padding: '2rem 1.3rem',
-                        border: 'none'
-
+                        border: 'none',
+                        // boxShadow: '0px 4px 92.80000305175781px -7px #0879FF';
+                        boxShadow:'0px 4px 92.80000305175781px -7px #0879FF'
                     }}>
                         <Image src={image} width='40px' />
                     </button>

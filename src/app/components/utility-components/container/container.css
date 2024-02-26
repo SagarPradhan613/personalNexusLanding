@@ -1,0 +1,8 @@
+.test-hover{
+    transition: background-color 0.5s ease-in;
+    position: relative;
+    z-index: 1000;
+}
+.test-hover:hover{
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
